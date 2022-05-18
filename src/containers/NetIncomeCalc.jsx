@@ -5,7 +5,7 @@ import {
     checkBoxLabels,
     resultLabels,
     formProcessor,
-} from "../services/netWorthService";
+} from "../services/netIncomeService";
 
 const NetIncomeCalc = () => {
     return (

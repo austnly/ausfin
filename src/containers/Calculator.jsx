@@ -13,6 +13,9 @@ import {
 import { Button } from "@mui/material";
 import { StyledCard, Container } from "../components/styled/Card.styled";
 import { camelCase } from "../services/utils";
+import StyledButton, {
+    CalculatorButton,
+} from "../components/styled/Button.styled";
 
 const Calculator = ({ inputs, checks, results, formParser }) => {
     const [result, setResult] = useState({});
@@ -25,7 +28,7 @@ const Calculator = ({ inputs, checks, results, formParser }) => {
     };
 
     useEffect(() => {
-        console.log("Tax Calc result:", result);
+        console.log("Calc result:", result);
     }, [result]);
 
     // useContext to append form data by page
@@ -66,9 +69,9 @@ const Calculator = ({ inputs, checks, results, formParser }) => {
                             );
                         })}
 
-                        <Button variant="contained" type="submit">
+                        <CalculatorButton variant="contained" type="submit">
                             Submit
-                        </Button>
+                        </CalculatorButton>
                     </FormControl>
                 </form>
             </StyledCard>
@@ -79,6 +82,10 @@ const Calculator = ({ inputs, checks, results, formParser }) => {
                             return /Rate$/.test(label) ? (
                                 <p key={label}>
                                     {label}: {result[camelCase(label)]}%
+                                </p>
+                            ) : /FIRE$/.test(label) ? (
+                                <p key={label}>
+                                    {label}: {result[camelCase(label)]}
                                 </p>
                             ) : (
                                 <p key={label}>

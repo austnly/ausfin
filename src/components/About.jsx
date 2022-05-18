@@ -5,17 +5,10 @@ import {
     checkBoxLabels,
     resultLabels,
     formProcessor,
-} from "../services/netWorthService";
+} from "../services/netIncomeService";
 
 const About = () => {
-    return (
-        <Calculator
-            inputs={inputLabels}
-            checks={checkBoxLabels}
-            results={resultLabels}
-            formParser={formProcessor}
-        />
-    );
+    return <h1>About</h1>;
 };
 
 export default About;

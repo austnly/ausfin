@@ -672,7 +672,7 @@ export const timeToFIRE = (
     incomeObj: IncomeTaxProfile,
     age: number,
     growth: number = 7,
-): { result: IncomeTaxProfile; years: number; age: number } => {
+): { result: IncomeTaxProfile; yearsToFire: number; ageAtFire: number } => {
     console.log("---------TTF IncomeObj passed: ", incomeObj); //change to income occurs between logs here
     const reqIncome = preTaxTarget(incomeObj.expenses);
     console.log("----After PTT:", incomeObj);
@@ -794,8 +794,8 @@ Invested this year: ${netPosition.availableToInvest}
     }
 
     return {
-        years: fireYears,
-        age: startAge + fireYears,
+        yearsToFire: fireYears,
+        ageAtFire: startAge + fireYears,
         result: yearEnd,
     };
 };

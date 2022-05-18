@@ -11,4 +11,19 @@ const StyledButton = styled(ButtonBase)`
     margin: 12px auto;
 `;
 
+export const CalculatorButton = styled(ButtonBase)`
+    box-sizing: border-box;
+    padding: 10px 24px;
+    background-color: #2b2d42;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 24px;
+    border-radius: 12px;
+    transition: 0.2s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+`;
+
 export default StyledButton;
