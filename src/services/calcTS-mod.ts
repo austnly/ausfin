@@ -20,7 +20,7 @@ export interface TaxResult {
 export interface SuperResult {
     superContribution: number;
     reportableContributions: number;
-    afterSuper?: number;
+    incomeAfterSuper?: number;
 }
 
 export interface HelpResult {
@@ -120,7 +120,7 @@ export const superCalc = (incomeSuperInput: IncomeData): SuperResult => {
     const reportableContributions = totalSup - incExclSup * 0.095;
 
     return {
-        afterSuper: Math.round(incExclSup),
+        incomeAfterSuper: Math.round(incExclSup),
         superContribution: Math.round(totalSup),
         reportableContributions:
             reportableContributions > 0
@@ -385,14 +385,14 @@ export const taxTime = (
     // Super contribution and income less super contribution
     if (paySup) {
         const { netIncome, superInclusive, superContributionRate } = incomeObj;
-        const { afterSuper, superContribution, reportableContributions } =
+        const { incomeAfterSuper, superContribution, reportableContributions } =
             superCalc({
                 income: netIncome,
                 superInclusive: superInclusive,
                 rate: superContributionRate,
                 maxSuperContributions: maxSuper,
             });
-        income = afterSuper;
+        income = incomeAfterSuper;
         console.log(income);
         supCont = superContribution;
         repSup = reportableContributions;

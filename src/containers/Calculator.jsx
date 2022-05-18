@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Button } from "@mui/material";
 import { StyledCard, Container } from "../components/styled/Card.styled";
-import { camelCase } from "../components/About";
+import { camelCase } from "../services/utils";
 
 const Calculator = ({ inputs, checks, results, formParser }) => {
     const [result, setResult] = useState({});
@@ -73,7 +73,7 @@ const Calculator = ({ inputs, checks, results, formParser }) => {
                 </form>
             </StyledCard>
             <>
-                {result.netIncome ? (
+                {result?.hasOwnProperty(camelCase(results[0])) ? (
                     <StyledCard>
                         {results.map((label) => {
                             return /Rate$/.test(label) ? (

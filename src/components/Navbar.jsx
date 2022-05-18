@@ -12,23 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { Link } from "react-router-dom";
+import StyledLink from "./styled/Link.styled";
 import styled from "@emotion/styled";
-
-const pages = ["Home", "About"];
-const links = ["/", "/about", "/calc"];
-const calculators = [
-    "Net Income & Tax",
-    "Time to FIRE",
-    "HELP Repayments",
-    "Medicare",
-];
-const calcLinks = ["/tax", "/fire", "/help-repay", "/medicare"];
-
-const StyledLink = styled(Link)`
-    color: inherit;
-    text-decoration: inherit;
-`;
+import { pages, links, calculators, calcLinks } from "../services/static/links";
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);

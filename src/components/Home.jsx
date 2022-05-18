@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, ButtonBase } from "@mui/material";
-import { StyledCard } from "./styled/Card.styled";
+import StyledButton from "./styled/Button.styled";
 
 const StyledHome = styled.div`
     flex: 1 0;
@@ -53,22 +52,6 @@ const RightBox = styled.div`
     /* flex: 2; */
     box-sizing: border-box;
     /* align-self: center; */
-`;
-
-const BodyPara = styled.p`
-    margin: 24px;
-    /* text-align: center; */
-    font-size: 1.1rem;
-`;
-
-const StyledButton = styled(ButtonBase)`
-    box-sizing: border-box;
-    padding: 10px 24px;
-    background-color: #5de85da7;
-    color: white;
-    font-weight: 600;
-    border-radius: 10px;
-    margin: 12px auto;
 `;
 
 const Home = () => {

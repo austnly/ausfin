@@ -1,20 +1,21 @@
+import styled from "@emotion/styled";
 import Calculator from "./Calculator";
 import {
-    checkBoxLabels,
     inputLabels,
-    mlsProcessor,
+    checkBoxLabels,
     resultLabels,
-} from "../services/mlsService";
+    taxProcessor,
+} from "../services/simpleTaxService";
 
-const MLSCalc = () => {
+const SimpleTaxCalc = () => {
     return (
         <Calculator
             inputs={inputLabels}
             checks={checkBoxLabels}
             results={resultLabels}
-            formParser={mlsProcessor}
+            formParser={taxProcessor}
         />
     );
 };
 
-export default MLSCalc;
+export default SimpleTaxCalc;
