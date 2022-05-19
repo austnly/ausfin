@@ -30,7 +30,7 @@ A hobby project based around creating easy to use personal finance calculators t
 -   To create a functional and easy-to-use page using React, Material UI, JavaScript, and TypeScript
 -   To familiarise myself with principles of TypeScript
 -   To explore the different components available in Material UI, and use the styled-components-inspired @emotion/styled CSS library for creating React components
--   To scrape table data from webpages using a Node script, in this case the (Australian Taxation Office)[https://www.ato.gov.au/rates/individual-income-tax-rates/] website
+-   To scrape table data from webpages using a Node script, in this case the [Australian Taxation Office](https://www.ato.gov.au/rates/individual-income-tax-rates/) website
 
 ## Tech Stack
 
@@ -42,8 +42,8 @@ A hobby project based around creating easy to use personal finance calculators t
 -   Node
 -   ReactJS
 -   React Router DOM
--   (Material UI)[https://mui.com/]
--   (@emotion/styled)[https://emotion.sh/docs/styled]
+-   [Material UI](https://mui.com/)
+-   [@emotion/styled](https://emotion.sh/docs/styled)
 
 ## Implementation
 
