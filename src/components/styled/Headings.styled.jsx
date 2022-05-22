@@ -1,3 +1,5 @@
+import styled from "@emotion/styled";
+
 export const Heading = styled.h1`
     color: #eeeeee;
     margin: 0;
@@ -25,4 +27,13 @@ export const StyledHeader = styled.header`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+`;
+
+export const SmallHead = styled.h3`
+    margin: 12px 0;
+    padding: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
 `;

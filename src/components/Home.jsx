@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import StyledLink, { StyledCell } from "./styled/Link.styled";
+import { SmallHead } from "./styled/Headings.styled";
 import StyledButton from "./styled/Button.styled";
 
 const StyledHome = styled.div`
@@ -7,7 +9,8 @@ const StyledHome = styled.div`
     flex-flow: column nowrap;
     /* flex-flow: row nowrap; */
     /* gap: 20px; */
-    /* align-content: space-around; */
+    align-content: space-around;
+    justify-content: space-around;
     /* padding: 20px; */
     font-family: "Montserrat";
     /* font-family: "Abhaiya Libra", serif; */
@@ -17,17 +20,8 @@ const StyledHome = styled.div`
     } */
 `;
 
-const SmallHead = styled.h3`
-    margin: 12px 0;
-    padding: 0;
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: center;
-`;
-
 const LeftBox = styled.div`
-    padding: 12px;
+    /* padding: 12px; */
     /* background-color: #2b2d42bb; */
     background-color: #e1e1e1e7;
     color: black;
@@ -35,7 +29,7 @@ const LeftBox = styled.div`
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    /* flex: 1; */
     box-sizing: border-box;
     /* align-self: center; */
 `;
@@ -58,15 +52,28 @@ const Home = () => {
     return (
         <StyledHome>
             <LeftBox>
-                <SmallHead>Income Taxes</SmallHead>
-                <SmallHead>HECS/HELP repayments</SmallHead>
-                <SmallHead>Superannuation</SmallHead>
-                <SmallHead>Medicare Levy Surcharge</SmallHead>
-                <SmallHead>Time to FIRE</SmallHead>
+                <StyledCell to="/simple">
+                    <SmallHead>Simple Tax</SmallHead>
+                </StyledCell>
+                <StyledCell to="/tax">
+                    <SmallHead>Net Income</SmallHead>
+                </StyledCell>
+                <StyledCell to="/help-repay">
+                    <SmallHead>HECS/HELP repayments</SmallHead>
+                </StyledCell>
+                <StyledCell to="/super">
+                    <SmallHead>Superannuation</SmallHead>
+                </StyledCell>
+                <StyledCell to="/medicare">
+                    <SmallHead>Medicare Levy Surcharge</SmallHead>
+                </StyledCell>
+                <StyledCell to="/fire">
+                    <SmallHead>Time to FIRE</SmallHead>
+                </StyledCell>
             </LeftBox>
-            <RightBox>
-                <SmallHead>Run your numbers</SmallHead>
-                {/* <BodyPara>
+            {/* <RightBox> */}
+            {/* <SmallHead>Run your numbers</SmallHead> */}
+            {/* <BodyPara>
                     If you:
                     <ul>
                         <li>
@@ -89,8 +96,8 @@ const Home = () => {
                     The calculators on this site are here to lay out clear and
                     simple. Click below to get started.
                 </BodyPara> */}
-                <StyledButton>Let's Go</StyledButton>
-            </RightBox>
+            {/* <StyledButton>Let's Go</StyledButton> */}
+            {/* </RightBox> */}
         </StyledHome>
     );
 };
