@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { StyledForm } from "../components/styled/Form.styled";
-import { timeToFIRE, IncomeTaxProfile, NetWorth } from "../services/calcTS";
+import { timeToFIRE, IncomeTaxProfile, NetWorth } from "../services/calcTS-mod";
 import { useState, useEffect } from "react";
 import Calculator from "./Calculator";
 import {

@@ -89,7 +89,7 @@ export const taxCalc = (
  * @returns {SuperResult} Net income after super deducted, and Super contributions amount
  */
 export const superCalc = (incomeSuperInput: IncomeData): SuperResult => {
-    console.log("Arg for superCalc", incomeSuperInput);
+    // console.log("Arg for superCalc", incomeSuperInput);
     const { income, superInclusive, rate, maxSuperContributions } = {
         ...incomeSuperInput,
     };
@@ -107,7 +107,7 @@ export const superCalc = (incomeSuperInput: IncomeData): SuperResult => {
         }
     } else {
         if (superInclusive) {
-            console.log("reaches here", income, rate);
+            // console.log("reaches here", income, rate);
             incExclSup = income / (1 + rate / 100); // e.g. 90k income incl 10% super gives 90/1.1 = 81.8k excl super
             totalSup = income - incExclSup;
         } else {
@@ -258,7 +258,7 @@ const growInv = (
     invContrib: number = 0,
     growth: number = 7,
 ): InvResult => {
-    console.log(invBal, invContrib, growth);
+    // console.log(invBal, invContrib, growth);
     return {
         growth: Math.round(invBal * (growth / 100)),
         invBal: Math.round(invBal * (1 + growth / 100) + invContrib),
@@ -376,9 +376,9 @@ export const taxTime = (
     paySup: boolean = true,
 ): NetIncome => {
     // Income after deductions
-    console.log("Income Obj: ", incomeObj);
+    // console.log("Income Obj: ", incomeObj);
     let income = incomeObj.netIncome;
-    console.log(income);
+    // console.log(income);
     let supCont = 0;
     let repSup = 0;
 
@@ -393,7 +393,7 @@ export const taxTime = (
                 maxSuperContributions: maxSuper,
             });
         income = incomeAfterSuper;
-        console.log(income);
+        // console.log(income);
         supCont = superContribution;
         repSup = reportableContributions;
     }
@@ -405,7 +405,7 @@ export const taxTime = (
     // console.log(`Previous super balance is ${incomeObj.superBal}`);
     let newSuper = updateSuper(incomeObj.superBalance, supCont, growth);
     // console.log(`New super balance is ${newSuper}`);
-    console.log(income);
+    // console.log(income);
     //Add investment earnings to income
 
     const invBalGrowth = growInv(
@@ -422,17 +422,17 @@ export const taxTime = (
         : invBalGrowth > incomeObj.netIncome
         ? invBalGrowth
         : income;
-    console.log(income);
+    // console.log(income);
     // determine hecs repayment and balance
 
     income -= incomeObj.deductions;
-    console.log(
-        "Assessable income",
-        income,
-        repSup,
-        incomeObj.fringeBenefits,
-        income + repSup + incomeObj.fringeBenefits,
-    );
+    // console.log(
+    //     "Assessable income",
+    //     income,
+    //     repSup,
+    //     incomeObj.fringeBenefits,
+    //     income + repSup + incomeObj.fringeBenefits,
+    // );
     const help = totalHELP(income + repSup + incomeObj.fringeBenefits);
     const helpRepayment = help.helpRepayment;
     const helpRepaymentRate = help.helpRepaymentRate;
@@ -466,15 +466,15 @@ export const taxTime = (
     income = Math.round(
         income - tax - helpRepayment + helpOver - medicare - mlsRepay,
     );
-    console.log(
-        "Total Tax and Payments:",
-        tax + helpRepayment - helpOver + medicare + mlsRepay,
-        "\nEach:",
-        tax,
-        helpRepayment - helpOver,
-        medicare,
-        mlsRepay,
-    );
+    // console.log(
+    //     "Total Tax and Payments:",
+    //     tax + helpRepayment - helpOver + medicare + mlsRepay,
+    //     "\nEach:",
+    //     tax,
+    //     helpRepayment - helpOver,
+    //     medicare,
+    //     mlsRepay,
+    // );
     // 	console.log(
     // 		`Medicare Levy: ${medicare}
     // Tax: ${tax}
@@ -565,7 +565,7 @@ export const preTaxTarget = (targetIncome: number): number => {
             break;
         }
     }
-    console.log("Pre-tax Income required for FIRE: ", tester);
+    // console.log("Pre-tax Income required for FIRE: ", tester);
     return tester.netIncome;
 }; // checked
 
@@ -673,14 +673,14 @@ export const timeToFIRE = (
     age: number,
     growth: number = 7,
 ): { result: IncomeTaxProfile; yearsToFire: number; ageAtFire: number } => {
-    console.log("---------TTF IncomeObj passed: ", incomeObj); //change to income occurs between logs here
+    // console.log("---------TTF IncomeObj passed: ", incomeObj); //change to income occurs between logs here
     const reqIncome = preTaxTarget(incomeObj.expenses);
-    console.log("----After PTT:", incomeObj);
+    // console.log("----After PTT:", incomeObj);
     const fireNum = fireNumber(reqIncome);
     const startAge = age;
 
     let year = 0;
-    console.log("----Before Copy:", incomeObj);
+    // console.log("----Before Copy:", incomeObj);
     let yearEnd = new IncomeTaxProfile(
         new NetWorth(
             incomeObj.netIncome,
@@ -695,7 +695,7 @@ export const timeToFIRE = (
         incomeObj.fringeBenefits,
         incomeObj.privateHospitalCover,
     );
-    console.log("-------After Copy:", yearEnd);
+    // console.log("-------After Copy:", yearEnd);
 
     while (
         !invTargetReached(yearEnd.investmentsBalance, growth, reqIncome, age)
@@ -710,21 +710,21 @@ export const timeToFIRE = (
         // incomeObj.helpBal = yearEnd.helpBal;
         // incomeObj.helpBal = yearEnd.superBal;
         // incomeObj.helpBal = yearEnd.invBal;
-        console.log("----INVESTMENTS:", yearEnd.investmentsBalance);
+        // console.log("----INVESTMENTS:", yearEnd.investmentsBalance);
 
-        console.log(
-            `Age: ${age}
-Investments Balance: ${yearEnd.investmentsBalance}
-Super Balance: ${yearEnd.superBalance}
-HECS Balance: ${yearEnd.helpBalance}
-Invested this year: ${netPosition.availableToInvest}
+        //         console.log(
+        //             `Age: ${age}
+        // Investments Balance: ${yearEnd.investmentsBalance}
+        // Super Balance: ${yearEnd.superBalance}
+        // HECS Balance: ${yearEnd.helpBalance}
+        // Invested this year: ${netPosition.availableToInvest}
 
-`,
-        );
+        // `,
+        //         );
     }
 
-    console.log(`Investments will reach target balance at age ${age}.
-Start max super contributions.`);
+    //     console.log(`Investments will reach target balance at age ${age}.
+    // Start max super contributions.`);
     const superFIRE = superTarget(
         yearEnd.superBalance,
         yearEnd.expenses,
@@ -732,11 +732,6 @@ Start max super contributions.`);
         age,
         growth,
     );
-    // console.log(
-    // 	`Target super balance is ${superFIRE.balance} before contributions stop.
-    //     FIRE number is ${superFIRE.fireNumber}.
-    //     Super Balance will be ${superFIRE.balBy60} by 60.`,
-    // );
 
     while (age < superFIRE.age + 1) {
         year += 1;
@@ -747,19 +742,19 @@ Start max super contributions.`);
         yearEnd.superBalance = netPosition.superBalance;
         yearEnd.investmentsBalance = netPosition.investmentsBalance;
 
-        console.log(
-            `Age: ${age}
-Investments Balance: ${yearEnd.investmentsBalance}
-Super Balance: ${yearEnd.superBalance}
-HECS Balance: ${yearEnd.helpBalance}
-Invested this year: ${netPosition.availableToInvest}
+        //         console.log(
+        //             `Age: ${age}
+        // Investments Balance: ${yearEnd.investmentsBalance}
+        // Super Balance: ${yearEnd.superBalance}
+        // HECS Balance: ${yearEnd.helpBalance}
+        // Invested this year: ${netPosition.availableToInvest}
 
-`,
-        );
+        // `,
+        //         );
     }
 
     const fireYears = year;
-    console.log(`You will reach FIRE in ${year} years!`);
+    // console.log(`You will reach FIRE in ${year} years!`);
 
     yearEnd.netIncome = reqIncome;
     yearEnd.deductions = 0;
@@ -776,21 +771,21 @@ Invested this year: ${netPosition.availableToInvest}
         yearEnd.superBalance = netPosition.superBalance;
         yearEnd.investmentsBalance = netPosition.investmentsBalance;
 
-        console.log(
-            `Age: ${age}
-Investments Balance: ${yearEnd.investmentsBalance}
-Super Balance: ${yearEnd.superBalance}
-HECS Balance: ${yearEnd.helpBalance}
-Invested this year: ${netPosition.availableToInvest}
+        //         console.log(
+        //             `Age: ${age}
+        // Investments Balance: ${yearEnd.investmentsBalance}
+        // Super Balance: ${yearEnd.superBalance}
+        // HECS Balance: ${yearEnd.helpBalance}
+        // Invested this year: ${netPosition.availableToInvest}
 
-`,
-        );
+        // `,
+        //         );
 
-        console.log(
-            `Final Net Worth: ${
-                yearEnd.investmentsBalance + yearEnd.superBalance
-            }`,
-        );
+        //         console.log(
+        //             `Final Net Worth: ${
+        //                 yearEnd.investmentsBalance + yearEnd.superBalance
+        //             }`,
+        //         );
     }
 
     return {
