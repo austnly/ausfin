@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ausfin/static/css/main.5b40755f.css",
+    "main.js": "/ausfin/static/js/main.e81ef4f4.js",
+    "static/media/background.jpeg": "/ausfin/static/media/background.c4df0b731d4a0a299828.jpeg",
+    "index.html": "/ausfin/index.html",
+    "main.5b40755f.css.map": "/ausfin/static/css/main.5b40755f.css.map",
+    "main.e81ef4f4.js.map": "/ausfin/static/js/main.e81ef4f4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b40755f.css",
+    "static/js/main.e81ef4f4.js"
+  ]
+}
