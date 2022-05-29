@@ -73,6 +73,7 @@ I encountered the following issues along the way:
 -   [ ] Initially attempted to do the project in TypeScript React (TSX) - and realised I did not know TypeScript well enough
 -   [x] Using the Link component from React Router DOM added default anchor styling which I wanted to overwrite globally - my solution was to created a StyledLink component using @emotion/styled to wrap the Link component
 -   [x] Initial layout was messy with individual forms and calculator pages for each type - refactored code to be able to use arrays that allowed easy mapping to components for Forms
+-   [x] Issue with navigating to a direct URL (e.g. /ausfin/tax) due to GitHub Pages implementation returning a 404. Fixed using redirect scripts in 404.html and index.html from [rafgraph/spa-github/pages](https://github.com/rafgraph/spa-github-pages)
 
 ### Future Additions
 
