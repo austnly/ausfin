@@ -4,6 +4,8 @@
 
 A hobby project based around creating easy to use personal finance calculators tailored for Australians. The calculator logic has been built gradually since starting my coding journey, and so far includes services for tax, super, HECS-HELP, medicare, and also a rough estimate of time taken to reach FIRE (financial independence)!
 
+I'm also working on a related Java Spring API to house separate the calculation logic from the front-end over [here](https://github.com/austnly/ausfin-api).
+
 ### 🚀 [Launch Live Project](https://www.astnly.com/ausfin)
 
 ## Table of Contents
@@ -77,6 +79,7 @@ I encountered the following issues along the way:
 
 ### Future Additions
 
+-   [ ] (In progress) Migrate all calculation logic to a [Java Spring API](https://github.com/austnly/ausfin-api)
 -   [ ] Functionality to home page buttons as a select or radio
 -   [ ] Page headings
 -   [ ] Refactor to mount correct Calculator with props based on URL params to reduce React JSX components
