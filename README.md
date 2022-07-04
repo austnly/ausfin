@@ -21,11 +21,10 @@ I'm also working on a related Java Spring API to separate the calculation logic 
 
 ## Screenshots
 
-<!--
 <figure>
 <figcaption><i>Home Page</i></figcaption>
-<img src="./screenshots/home.png" height="300px" alt="Home Page" />
-</figure> -->
+<img src="./screenshots/thumbnail.png" height="300px" alt="Home Page" />
+</figure>
 
 ## Goals
 
