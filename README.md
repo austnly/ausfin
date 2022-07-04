@@ -4,7 +4,7 @@
 
 A hobby project based around creating easy to use personal finance calculators tailored for Australians. The calculator logic has been built gradually since starting my coding journey, and so far includes services for tax, super, HECS-HELP, medicare, and also a rough estimate of time taken to reach FIRE (financial independence)!
 
-I'm also working on a related Java Spring API to house separate the calculation logic from the front-end over [here](https://github.com/austnly/ausfin-api).
+I'm also working on a related Java Spring API to separate the calculation logic from the front-end over [here](https://github.com/austnly/ausfin-api).
 
 ### 🚀 [Launch Live Project](https://www.astnly.com/ausfin)
 
