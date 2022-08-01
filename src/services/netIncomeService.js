@@ -1,4 +1,4 @@
-import { IncomeTaxProfile, NetWorth, taxTime } from "./calcTS-mod";
+import { fetchFromApi, flattenResult } from "./utils";
 
 export const inputLabels = [
     "Gross Income",
@@ -36,34 +36,9 @@ export const resultLabels = [
     "HELP Repayment Rate",
 ];
 
-export const formProcessor = (formData) => {
-    let formDataVals = {};
-    for (const [key, value] of formData.entries()) {
-        formDataVals[key] =
-            Number(value) || value === "0" ? Number(value) : value;
-    }
-    console.log("Form Data:", formDataVals);
+export const formProcessor = async (formData) => {
+    // result has nested objects
+    const nestedResult = await fetchFromApi("detailed-tax", formData);
 
-    const netWorth = new NetWorth(
-        formDataVals.grossIncome,
-        formDataVals.helpBalance,
-        formDataVals.superBalance,
-        formDataVals.investmentsBalance,
-    );
-    console.log(netWorth);
-    const incomeTaxProfile = new IncomeTaxProfile(
-        netWorth,
-        formDataVals.expenses,
-        Boolean(formDataVals.superInclusive),
-        formDataVals.superContributionRate,
-        formDataVals.deductions,
-        formDataVals.fringeBenefits,
-        Boolean(formDataVals.privateHospitalCover),
-    );
-    console.log(incomeTaxProfile);
-    return taxTime(
-        incomeTaxProfile,
-        Boolean(formDataVals.max),
-        formDataVals.growth,
-    );
+    return flattenResult(nestedResult);
 };

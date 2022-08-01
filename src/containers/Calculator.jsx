@@ -1,8 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { IncomeTaxProfile, NetWorth, taxTime } from "./../services/calcTS-mod";
-import { StyledForm } from "../components/styled/Form.styled";
-import styled from "@emotion/styled";
 import {
     Checkbox,
     FormControl,
@@ -20,10 +17,10 @@ import StyledButton, {
 const Calculator = ({ inputs, checks, results, formParser }) => {
     const [result, setResult] = useState({});
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const result = formParser(formData);
+        const result = await formParser(formData);
         setResult(result);
     };
 
