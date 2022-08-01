@@ -1,4 +1,3 @@
-import { totalMLS } from "./calcTS-mod";
 import { fetchFromApi } from "./utils";
 
 export const inputLabels = ["Income", "Reportable Fringe Benefits"];

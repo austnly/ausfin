@@ -11,10 +11,10 @@ export const camelCase = (string) => {
 export const fetchFromApi = async (endpoint, formData) => {
     // Convert formData to an Object
     const plainFormData = Object.fromEntries(formData.entries());
+
+    console.log(plainFormData);
     // Convert object to JSON to send in body
-    const json = JSON.stringify(plainFormData)
-        .replaceAll('"on"', "true")
-        .replaceAll('"off"', "false");
+    const json = JSON.stringify(plainFormData).replaceAll('"on"', "true");
 
     console.log(json);
 

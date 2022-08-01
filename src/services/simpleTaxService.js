@@ -1,4 +1,3 @@
-import { taxCalc } from "./calcTS-mod";
 import { fetchFromApi } from "./utils";
 
 export const inputLabels = ["Income"];
