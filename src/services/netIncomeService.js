@@ -66,5 +66,19 @@ export const formProcessor = async (formData) => {
     //     Boolean(formDataVals.max),
     //     formDataVals.growth,
     // );
-    return await fetchFromApi("detailed-tax", formData);
+    const nestedResult = await fetchFromApi("detailed-tax", formData);
+    const result = {};
+
+    // need to flatten nested object
+    for (const [key, value] of Object.entries(nestedResult)) {
+        if (typeof value != "object") {
+            result[key] = value;
+        } else {
+            for (const [subkey, subval] of Object.entries(value)) {
+                result[subkey] = subval;
+            }
+        }
+    }
+
+    return result;
 };
