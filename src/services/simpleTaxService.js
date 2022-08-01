@@ -1,13 +1,12 @@
 import { taxCalc } from "./calcTS-mod";
+import { fetchFromApi } from "./utils";
 
-export const inputLabels = ["Taxable Income"];
+export const inputLabels = ["Income"];
 
 export const checkBoxLabels = [];
 
 export const resultLabels = ["Base Tax", "Tax Rate", "Total Tax", "After Tax"];
 
-export const taxProcessor = (formData) => {
-    const income = Number(formData.get("taxableIncome"));
-    console.log("Income: ", income);
-    return taxCalc(income);
+export const taxProcessor = async (formData) => {
+    return await fetchFromApi("tax", formData);
 };

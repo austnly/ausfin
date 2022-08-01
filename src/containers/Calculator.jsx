@@ -20,10 +20,10 @@ import StyledButton, {
 const Calculator = ({ inputs, checks, results, formParser }) => {
     const [result, setResult] = useState({});
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const result = formParser(formData);
+        const result = await formParser(formData);
         setResult(result);
     };
 
