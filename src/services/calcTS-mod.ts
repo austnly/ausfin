@@ -631,14 +631,14 @@ export const superTarget = (
     const target = fireNumber(expenses);
 
     // Balance by the age of 60 without further contributions
-    let retireBal = balance * Math.pow((1 + growth / 100) * 0.85, 60 - age);
+    let retireBal = balance * Math.pow(1 + (growth / 100) * 0.85, 60 - age);
 
     // If super balance is not sufficient to reach target, increment by a year and contribute to super
     while (retireBal < target) {
         year += 1;
         age += 1;
         balance = updateSuper(balance, contrib, growth);
-        retireBal = balance * Math.pow(1 + growth * 0.85, 60 - age);
+        retireBal = balance * Math.pow(1 + (growth / 100) * 0.85, 60 - age);
     }
 
     return {
