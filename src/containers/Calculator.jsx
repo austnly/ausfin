@@ -1,8 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { IncomeTaxProfile, NetWorth, taxTime } from "./../services/calcTS-mod";
-import { StyledForm } from "../components/styled/Form.styled";
-import styled from "@emotion/styled";
 import {
     Checkbox,
     FormControl,

@@ -32,3 +32,18 @@ export const fetchFromApi = async (endpoint, formData) => {
     const result = await response.json();
     return result;
 };
+
+export const flattenResult = (nested) => {
+    const result = {};
+
+    for (const [key, value] of Object.entries(nested)) {
+        if (typeof value != "object") {
+            result[key] = value;
+        } else {
+            for (const [subkey, subval] of Object.entries(value)) {
+                result[subkey] = subval;
+            }
+        }
+    }
+    return result;
+};
