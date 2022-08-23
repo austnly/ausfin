@@ -15,26 +15,26 @@ import SuperCalc from "./containers/SuperCalc";
 import SimpleTaxCalc from "./containers/SimpleTaxCalc";
 
 const App = () => {
-    return (
-        <Wrapper>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Main />}>
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="fire" element={<FireCalc />} />
-                    <Route path="tax" element={<NetIncomeCalc />} />
-                    <Route path="help-repay" element={<HelpCalc />} />
-                    <Route path="medicare" element={<MLSCalc />} />
-                    <Route path="super" element={<SuperCalc />} />
-                    <Route path="simple" element={<SimpleTaxCalc />} />
-                </Route>
-            </Routes>
-            <Footer>
-                <p>Built by Austin.</p>
-            </Footer>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Main />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="fire" element={<FireCalc />} />
+          <Route path="tax" element={<NetIncomeCalc />} />
+          <Route path="help-repay" element={<HelpCalc />} />
+          <Route path="medicare" element={<MLSCalc />} />
+          <Route path="super" element={<SuperCalc />} />
+          <Route path="simple" element={<SimpleTaxCalc />} />
+        </Route>
+      </Routes>
+      <Footer>
+        <p>Built by Austin.</p>
+      </Footer>
+    </Wrapper>
+  );
 };
 
 export default App;
