@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ausfin/static/css/main.5b40755f.css",
-    "main.js": "/ausfin/static/js/main.09a0acdb.js",
+    "main.js": "/ausfin/static/js/main.7b320679.js",
     "static/media/background.jpeg": "/ausfin/static/media/background.c4df0b731d4a0a299828.jpeg",
     "index.html": "/ausfin/index.html",
     "main.5b40755f.css.map": "/ausfin/static/css/main.5b40755f.css.map",
-    "main.09a0acdb.js.map": "/ausfin/static/js/main.09a0acdb.js.map"
+    "main.7b320679.js.map": "/ausfin/static/js/main.7b320679.js.map"
   },
   "entrypoints": [
     "static/css/main.5b40755f.css",
-    "static/js/main.09a0acdb.js"
+    "static/js/main.7b320679.js"
   ]
 }
